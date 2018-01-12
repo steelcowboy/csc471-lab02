@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/steelcowboy/programming/csc471/lab01/build",
+  "command": "/usr/bin/c++     -std=c++0x -Wall -pedantic   -o CMakeFiles/Lab01.dir/src/Image.cpp.o -c /home/steelcowboy/programming/csc471/lab01/src/Image.cpp",
+  "file": "/home/steelcowboy/programming/csc471/lab01/src/Image.cpp"
+},
+{
+  "directory": "/home/steelcowboy/programming/csc471/lab01/build",
+  "command": "/usr/bin/c++     -std=c++0x -Wall -pedantic   -o CMakeFiles/Lab01.dir/src/main.cpp.o -c /home/steelcowboy/programming/csc471/lab01/src/main.cpp",
+  "file": "/home/steelcowboy/programming/csc471/lab01/src/main.cpp"
+}
+]
