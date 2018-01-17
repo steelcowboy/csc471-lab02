@@ -40,8 +40,9 @@ float Triangle::get_area_c (int px, int py) {
 
 int main(int argc, char **argv)
 {
-	if(argc < 10) {
-		cout << "Usage: " << argv[0] << " filename width height vax vay vbx vby vcx vcy" << endl;
+	if(argc < 19) {
+        //                                  1        2     3     4  5  6  7 8   9 10 11 12 13 14 15 16 17 18
+		cout << "Usage: " << argv[0] << " filename width height x0 y0 r0 g0 b0 x1 y1 r1 g1 b1 x2 y2 r2 g2 b2" << endl;
 		return 0;
 	}
 	// Output filename
@@ -53,13 +54,14 @@ int main(int argc, char **argv)
 
     // Triangle bounds
     Triangle t (atoi(argv[4]), atoi(argv[5]), 
-            atoi(argv[6]), atoi(argv[7]), 
-            atoi(argv[8]), atoi(argv[9]));
+            atoi(argv[9]), atoi(argv[10]), 
+            atoi(argv[14]), atoi(argv[15]));
 
 	// Create the image. We're using a `shared_ptr`, a C++11 feature.
 	auto image = make_shared<Image>(width, height);
 
     float a, b, g;
+    int re, bl, gr;
     
     // Calculate the bounding box
     for (int i = t.l; i <= t.r; i++) {
@@ -72,7 +74,10 @@ int main(int argc, char **argv)
             if (a < 0 || b < 0 || g < 0)
                 continue;
 
-            image->setPixel(i, j, 255, 0, 0);
+            re = a * atoi(argv[6]) + b * atoi(argv[10]) + g * atoi(argv[16]);
+            bl = a * atoi(argv[7]) + b * atoi(argv[11]) + g * atoi(argv[17]);
+            gr = a * atoi(argv[8]) + b * atoi(argv[12]) + g * atoi(argv[18]);
+            image->setPixel(i, j, re, bl, gr);
         }
     }
 
